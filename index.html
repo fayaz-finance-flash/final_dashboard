@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Set the body height to at least 100% of the viewport height */
+            padding-top: 50px; /* Add padding to the top */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        div {
+            margin-bottom: 20px;
+            padding: 20px; /* Add padding to all sides of the div */
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%; /* Adjust the width based on your preference */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <div>
+        <h2>Success Rate</h2>
+        <img src="{{ url_for('static', filename='saved_plots/' ~ success_rate_plot) }}" alt="Success Rate Plot">
+    </div>
+
+    <div>
+        <h2>Return on Strategy</h2>
+        <img src="{{ url_for('static', filename='saved_plots/' ~ return_on_strategy_plot) }}" alt="Return on Strategy Plot">
+    </div>
+
+    <div>
+        <h2>Average Profit and Loss</h2>
+        <img src="{{ url_for('static', filename='saved_plots/' ~ avg_profit_loss_plot) }}" alt="Average Profit and Loss Plot">
+    </div>
+</body>
+</html>
